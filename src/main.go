@@ -43,6 +43,12 @@ func main() {
 			log.Fatalln(err.Error())
 		}
 		log.Println(output)
+	case "drivers_completed_booking_gt":
+		output, err := command.CompletedBookingGT(os.Args[2])
+		if err != nil {
+			log.Fatalln(err.Error())
+		}
+		log.Println(output)
 	default:
 		log.Fatalf("invalid `%s` command", os.Args[1])
 	}
