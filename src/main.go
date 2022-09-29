@@ -49,6 +49,12 @@ func main() {
 			log.Fatalln(err.Error())
 		}
 		log.Println(output)
+	case "booking_completed_distance_gt":
+		output, err := command.BookingCompletedDistanceGT(os.Args[2])
+		if err != nil {
+			log.Fatalln(err.Error())
+		}
+		log.Println(output)
 	default:
 		log.Fatalf("invalid `%s` command", os.Args[1])
 	}
