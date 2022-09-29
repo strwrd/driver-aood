@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/strwrd/driver-aood/src/business"
 	"github.com/strwrd/driver-aood/src/cmd"
 	"github.com/strwrd/driver-aood/src/storage"
@@ -30,31 +31,31 @@ func main() {
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
-		log.Println(output)
+		fmt.Println(output)
 	case "dispatch_driver_for_a_booking":
 		output, err := command.DispatchDriver(os.Args[2])
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
-		log.Println(output)
+		fmt.Println(output)
 	case "complete_booking":
 		output, err := command.CompleteBooking(os.Args[2])
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
-		log.Println(output)
+		fmt.Println(output)
 	case "drivers_completed_booking_gt":
 		output, err := command.CompletedBookingGT(os.Args[2])
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
-		log.Println(output)
+		fmt.Println(output)
 	case "booking_completed_distance_gt":
 		output, err := command.BookingCompletedDistanceGT(os.Args[2])
 		if err != nil {
 			log.Fatalln(err.Error())
 		}
-		log.Println(output)
+		fmt.Println(output)
 	default:
 		log.Fatalf("invalid `%s` command", os.Args[1])
 	}
